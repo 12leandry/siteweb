@@ -5,6 +5,8 @@
     "scripts": {
         "build": "vite build",
         "build:ssr": "vite build && vite build --ssr",
+        "build:github-pages": "vite build --config vite.github-pages.config.ts",
+        "deploy": "npm run build:github-pages && gh-pages -d dist",
         "dev": "vite",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
@@ -22,9 +24,11 @@
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-react": "^7.37.3",
         "eslint-plugin-react-hooks": "^7.0.0",
+        "gh-pages": "^6.1.0",
         "prettier": "^3.4.2",
         "prettier-plugin-organize-imports": "^4.1.0",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "terser": "^5.46.0",
         "typescript-eslint": "^8.23.0"
     },
     "dependencies": {
