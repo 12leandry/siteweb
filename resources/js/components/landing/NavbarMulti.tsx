@@ -1,14 +1,13 @@
 import { Moon, Sun, Globe, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { useLanguage, useTheme } from '@/hooks/useLanguageTheme';
 
-export default function NavbarMulti() {
+export default function NavbarMulti({ url }: { url: string }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
-    const { url } = usePage();
 
     useEffect(() => {
         const handleScroll = () => {
