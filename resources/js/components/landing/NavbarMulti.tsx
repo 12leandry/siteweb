@@ -44,7 +44,7 @@ export default function NavbarMulti({ url }: { url?: string } = {}) {
                     {/* Logo */}
                     <Link href="/" className="flex-shrink-0">
                         <a className="flex items-center space-x-3">
-                            <img src="/logo-icon.avif" alt="MPE Logo" className="h-40 w-auto" />
+                            <img src={`${import.meta.env.BASE_URL}logo-icon.avif`} alt="MPE Logo" className="h-40 w-auto" />
                             {/* <span
                                 className={`text-l font-bold transition-colors ${
                                     isScrolled ? 'text-[#0063b9]' : 'text-[#0063b9]'
