@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import { useLanguage, useTheme } from '@/hooks/useLanguageTheme';
 
-export default function NavbarMulti({ url }: { url: string }) {
+export default function NavbarMulti({ url }: { url?: string } = {}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
+    const currentUrl = url || (typeof window !== 'undefined' ? window.location.pathname : '/');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,7 +28,7 @@ export default function NavbarMulti({ url }: { url: string }) {
     ];
 
     const isActive = (href: string) => {
-        return url === href || url?.startsWith(href + '/');
+        return currentUrl === href || currentUrl?.startsWith(href + '/');
     };
 
     return (

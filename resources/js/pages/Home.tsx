@@ -1,4 +1,3 @@
-import { usePage } from '@inertiajs/react';
 import { useTheme } from '@/hooks/useLanguageTheme';
 import NavbarMulti from '@/components/landing/NavbarMulti';
 import FooterMulti from '@/components/landing/FooterMulti';
@@ -16,11 +15,10 @@ import VisionHome from '@/components/home/VisionHome';
 
 export default function Home() {
     const { theme } = useTheme();
-    const { url } = usePage();
 
     return (
         <div className={theme === 'dark' ? 'dark' : ''}>
-            <NavbarMulti url={url} />
+            <NavbarMulti />
             <Hero />
             <ServicesGridHome />
             <WhyChooseUsHome />
